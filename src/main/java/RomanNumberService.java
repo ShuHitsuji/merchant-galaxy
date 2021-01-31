@@ -21,16 +21,16 @@ public class RomanNumberService {
     }
 
     private static String convert(String roman) throws RomanNumberException {
-        int decimal = 0;
-        int lastNumber = 0;
+        Integer decimal = 0;
+        Integer lastNumber = 0;
 
         for (int i = roman.length() - 1; i >= 0; i--) {
-            char ch = roman.charAt(i);
+            Character ch = roman.charAt(i);
             decimal = CheckRoman(RomanNumbersEnum.getValueFromCode(ch), lastNumber, decimal);
             lastNumber = RomanNumbersEnum.getValueFromCode(ch);
         }
 
-        return decimal + "";
+        return String.valueOf(decimal);
 
     }
 

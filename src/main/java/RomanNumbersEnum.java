@@ -7,27 +7,28 @@ public enum RomanNumbersEnum {
     D('D', 500),
     M('M', 1000);
 
-    private int value;
-    private char code;
+    private Integer value;
+    private Character code;
 
 
-    RomanNumbersEnum(char code, int value) {
+    RomanNumbersEnum(Character code, Integer value) {
         this.code = code;
         this.value = value;
     }
 
-    public int getValue() {
+    public Integer getValue() {
         return value;
     }
 
-    public char getCode() {
+    public Character getCode() {
         return code;
     }
 
-    public static int getValueFromCode(char code) throws RomanNumberException {
+    public static Integer getValueFromCode(Character code) throws RomanNumberException {
         for (RomanNumbersEnum e : values()) {
-            if (e.getCode() == code) return e.getValue();
+            if (e.getCode().equals(code))
+                return e.getValue();
         }
-        throw new RomanNumberException("Codigo invalido");
+        throw new RomanNumberException(ConstantValues.ErrorCode.INVALID_ROMAN_CHARACTER);
     }
 }
