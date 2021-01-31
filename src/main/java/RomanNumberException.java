@@ -2,7 +2,7 @@
 
 public class RomanNumberException extends Exception {
 
-    public RomanNumberException(String description){
+    public RomanNumberException(String description) {
         super(description);
     }
 
