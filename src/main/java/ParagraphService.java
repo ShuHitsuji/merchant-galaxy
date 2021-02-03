@@ -101,7 +101,7 @@ public class ParagraphService {
 
             String romanResult = "";
             String completeResult = null;
-            boolean errorOccured = false;
+            boolean errorOccurred = false;
 
             for (String key : keys) {
 
@@ -109,14 +109,14 @@ public class ParagraphService {
                 if (romanValue == null) {
 
                     completeResult = ConstantValues.ErrorCode.NO_IDEA;
-                    errorOccured = true;
+                    errorOccurred = true;
                     break;
 
                 }
                 romanResult += romanValue;
             }
 
-            if (!errorOccured) {
+            if (!errorOccurred) {
                 romanResult = RomanNumberService.romanToArabic(romanResult);
                 completeResult = formatted + " is " + romanResult;
             }
